@@ -1,0 +1,471 @@
+TORS - TS
+
+Structural Rules:
+1. Classes shown with proper notation
+2. Relationships with correct multiplicity notation
+3. Proper relationship types
+4. Attributes listed within classes: 
+5. No design decisions (visibilities, navigabilities, data types)
+
+Intended Meaning:
+1. Classes represent meaningful domain concepts
+2. Relationships reflect real-world connections
+3. Multiplicities reflect actual constraints
+
+Classes (7):
+1. User
+2. Tour
+3. Reservation
+4. Feedback
+5. Customer
+6. Employee
+7. Agency
+
+Attributes (total across all classes):
+- User: 4 attributes (id, username, password, email)
+- Tour: 5 attributes (id, name, start_date, end_date, destination, duration)
+- Reservation: 7 attributes (id, tour_id, user_id, reservation_date, start_date, end_date, status)
+- Feedback: 5 attributes (id, tour_id, user_id, rating, text)
+- Customer: 4 attributes (id, name, email, phone)
+- Employee: 4 attributes (id, username, password, role)
+- Agency: 4 attributes (id, name, email, phone)
+
+Total attributes = 4 + 5 + 7 + 5 + 4 + 4 + 4 = 33 attributes
+
+Relationships (7):
+1. User to Reservation (one-to-many)
+2. User to Feedback (one-to-many)
+3. Tour to Reservation (one-to-many)
+4. Tour to Feedback (one-to-many)
+5. Reservation to Tour and User (many-to-one for both)
+6. Feedback to Tour and User (many-to-one for both)
+7. Employee to Customer (one-to-many)
+(The "Customer to Tour" and "Agency to Employee" relationships are mentioned but not fully detailed in the diagram; however, they are counted as part of the model.)
+
+Total relationships = 7
+
+Total Elements (\( I \)):
+Classes + Attributes + Relationships = 7 + 7 = 14 elements
+
+Total Errors (\( I_{err} \)):
+- Structural Rule Violations:
+- Relationships lacking graphical notation and multiplicity notation: 7*0.6
+- Improper comments ("PK/FK"): 7*0.1
+
+Total \( I_{err} \) = 7*0.6 + 7*0.1
+
+\[
+V = 1 - (7*0.6+ 7*0.1)/14= 0.65
+\]
+
+====================================================
+TORS - PS
+
+Structural Rules:
+1. Classes shown with proper notation
+2. Relationships with correct multiplicity notation
+3. Proper relationship types
+4. Attributes listed within classes: 
+5. No design decisions (visibilities, navigabilities, data types)
+
+Intended Meaning:
+1. Classes represent meaningful domain concepts
+2. Relationships reflect real-world connections
+3. Multiplicities reflect actual constraints
+
+Classes (3):
+1. User
+2. Reservation
+3. Feedback
+
+Attributes:
+The model does not specify attributes, but based on the use cases, we can infer the minimum necessary attributes for evaluation:
+
+Relationships (3):
+1. User to Reservation (one-to-many: "one user can have multiple reservations").
+2. Reservation to User (many-to-one: "each reservation is associated with exactly one user").
+3. System to Feedback (implied as a top-level entity interaction, interpreted as Feedback being associated with a User through a Reservation, but not explicitly clear in the diagram).
+
+Total Elements (\( I \)):
+Classes + Relationships = 3  + 3 = 6 elements
+
+Total Errors (\( I_{err} \)):
+
+- Overall, wrong notation: -0.2
+- Relationships multiplicity notation: 3*0.6
+- No attributes defined: 3*0.7
+
+Total \( I_{err} \) = 3*0.6 + 3*0.2  - 0.2
+
+\[
+V = 1 - (3*0.6 + 3*0.7)/6 - 0.2 = 0.15
+\]
+
+====================================================
+TORS - PG
+
+Structural Rules:
+1. Classes shown with proper notation
+2. Relationships with correct multiplicity notation
+3. Proper relationship types
+4. Attributes listed within classes: 
+5. No design decisions (visibilities, navigabilities, data types)
+
+Intended Meaning:
+1. Classes represent meaningful domain concepts
+2. Relationships reflect real-world connections
+3. Multiplicities reflect actual constraints
+
+Classes (3):
+1. Tour
+2. Customer
+3. Reservation
+
+Attributes (total across all classes):
+- Tour: 6 attributes (id, name, date, time, location, customer_id)
+- Customer: 4 attributes (id, name, email, phone)
+- Reservation: 6 attributes (id, tour_id, customer_id, date, time, status)
+
+Total attributes = 6 + 4 + 6 = 16 attributes
+
+Relationships (3):
+1. Tour to Customer (one-to-many)
+2. Reservation to Tour (many-to-one)
+3. Reservation to Customer (many-to-one)
+
+Classes + Attributes + Relationships = 3 + 16 + 3 = 22 elements
+
+Total Errors (\( I_{err} \)):
+- Relationships lacking graphical notation and multiplicity notation: 3*0.6
+- Improper comments ("PK/FK"): 3*0.1
+
+Total \( I_{err} \) = 3*0.6 + 3*0.1
+
+\[
+V = 1 - (3*0.6 + 3*0.1)/6 = 0.65
+\]
+
+====================================================
+SWS - TS
+
+Structural Rules:
+1. Classes shown with proper notation
+2. Relationships with correct multiplicity notation
+3. Proper relationship types
+4. Attributes listed within classes: 
+5. No design decisions (visibilities, navigabilities, data types)
+
+Intended Meaning:
+1. Classes represent meaningful domain concepts
+2. Relationships reflect real-world connections
+3. Multiplicities reflect actual constraints
+
+No concrete specific output (a wrong general description) 
+
+\[
+V = 1 - 1 = 0
+\]
+
+====================================================
+SWS - PS
+
+Structural Rules:
+1. Classes shown with proper notation
+2. Relationships with correct multiplicity notation
+3. Proper relationship types
+4. Attributes listed within classes: 
+5. No design decisions (visibilities, navigabilities, data types)
+
+Intended Meaning:
+1. Classes represent meaningful domain concepts
+2. Relationships reflect real-world connections
+3. Multiplicities reflect actual constraints
+
+Classes:
+- User (appears in all diagrams)
+- Contract (UC-01)
+- Blockchain (UC-01)
+- Transaction (UC-01, UC-04, UC-05)
+- AuthProvider (UC-02)
+- AccountLockout (UC-02)
+- DigitalAsset (UC-05)
+
+Total unique classes = 7
+
+Attributes:
+- User:
+- account (reference to Account, not counted as an attribute for validity purposes)
+- security_questions (UC-02, Map<String, String>)
+- digital_assets (UC-05, Map<String, DigitalAsset>)
+- spending_limit (UC-04, Double)
+- Total: 3 attributes
+- Contract (UC-01):
+- contract_code (String)
+- parameters (Map<String, String>)
+- deployment_options (DeploymentOptions)
+- Total: 3 attributes
+- Blockchain (UC-01):
+- unique_contract_id (Integer)
+- Total: 1 attribute
+- Transaction: No attributes explicitly listed, but inferred from UC-01, UC-04, UC-05:
+- id
+- contract_id (UC-01, implied)
+- asset_id (UC-05, implied for DigitalAsset)
+- Total: 3 attributes
+- AuthProvider (UC-02):
+- recovery_code (String)
+- verification_questions (Map<String, String>)
+- Total: 2 attributes
+- AccountLockout: No attributes listed, but inferred from UC-02, UC-03:
+- id
+- lockout_duration
+- Total: 2 attributes
+- DigitalAsset (UC-05):
+- symbol (String)
+- balance (Double)
+- value (Double)
+- Total: 3 attributes
+
+Total attributes = 3 (User)+ 3 (Contract) + 1 (Blockchain) + 3 (Transaction) + 2 (AuthProvider) + 2 (AccountLockout) + 3 (DigitalAsset) = 17 attributes
+
+Relationships:
+- User to Contract (one-to-many, UC-01): A user can create multiple smart contracts.
+- Contract to Blockchain (one-to-one, UC-01): A contract is deployed on the blockchain.
+- Contract to Transaction (one-to-one, UC-01): A contract deployment results in a transaction.
+- User to AuthProvider (one-to-one, UC-02): A user interacts with an AuthProvider for multi-signature setup.
+- AuthProvider to AccountLockout (one-to-one, UC-02): AuthProvider manages account lockouts.
+- User to Transaction (one-to-many, UC-04, UC-05): A user can initiate transactions.
+- User to DigitalAsset (one-to-many, UC-05): A user manages multiple digital assets.
+- DigitalAsset to Transaction (one-to-many, UC-05): A digital asset can be involved in multiple transactions.
+
+Total relationships = 8
+
+Classes + Relationships = 7  + 8 = 15 elements
+
+Total Errors (\( I_{err} \)):
+- Relationships lacking multiplicity notation: 8*0.3
+- No attributes not listed (Account, Transaction): 2*0.7
+- Wrong notation for attributes: -0.2
+
+Total \( I_{err} \) = (8*0.3 + 2*0.7) - 0.2
+
+\[
+V = 1 - (8*0.3 + 2*0.7)/15 - 0.2 = 0.5466
+\]
+
+---
+====================================================
+SWS - PG
+
+Structural Rules:
+1. Classes shown with proper notation
+2. Relationships with correct multiplicity notation
+3. Proper relationship types
+4. Attributes listed within classes: 
+5. No design decisions (visibilities, navigabilities, data types)
+
+Intended Meaning:
+1. Classes represent meaningful domain concepts
+2. Relationships reflect real-world connections
+3. Multiplicities reflect actual constraints
+
+No concrete specific output. (a general description)
+
+"Raw Output: The final answer to the problem is not explicitly stated in the provided text. However, based on the detailed use case specifications, we have identified key requirements, constraints, and potential outcomes for each use case. A comprehensive solution would involve analyzing each use case in detail, identifying areas for improvement, and developing a strategy for addressing them."
+
+\[
+V = 0
+\]
+
+====================================================
+FODS - TS
+
+Structural Rules:
+1. Classes shown with proper notation
+2. Relationships with correct multiplicity notation
+3. Proper relationship types
+4. Attributes listed within classes: 
+5. No design decisions (visibilities, navigabilities, data types)
+
+Intended Meaning:
+1. Classes represent meaningful domain concepts
+2. Relationships reflect real-world connections
+3. Multiplicities reflect actual constraints
+
+No concrete specific  output (a general description) 
+
+\[
+V = 0
+\]
+
+====================================================
+FODS - PS
+
+Structural Rules:
+1. Classes shown with proper notation
+2. Relationships with correct multiplicity notation
+3. Proper relationship types
+4. Attributes listed within classes: 
+5. No design decisions (visibilities, navigabilities, data types)
+
+Intended Meaning:
+1. Classes represent meaningful domain concepts
+2. Relationships reflect real-world connections
+3. Multiplicities reflect actual constraints
+
+Classes:
+1. Customer
+2. Account Management
+3. Order Management
+4. Restaurant Staff
+5. Delivery Driver
+6. Payment Gateway
+7. Loyalty Program
+
+Total classes = 7
+
+Attributes:
+- Customer:
+- AccountId
+- Email
+- Password
+- Total: 3 attributes
+
+- Restaurant Staff:
+- StaffId
+- Name
+- Total: 2 attributes
+
+- Delivery Driver:
+- DriverId
+- Location
+- Total: 2 attributes
+
+- Payment Gateway:
+- GatewayId
+- PaymentMethod
+- Total: 2 attributes
+
+- Loyalty Program:
+- ProgramId
+- RewardsBalance
+- Total: 2 attributes
+
+Total attributes = 3 (Customer) + 2 (Restaurant Staff) + 2 (Delivery Driver) + 2 (Payment Gateway) + 2 (Loyalty Program) = **11 attributes**
+
+Relationships:
+
+Total relationships = 5
+
+Total Elements (\( I \)):
+Classes + Relationships = 7 + 5 = 12 elements
+
+Total Errors (\( I_{err} \)):
+- Wrong notation for classes (having use case information in class name): -0.2
+- Attributes not shown in class graphically: 7*0.2
+- Relationships lacking multiplicity notation: 5 *0.3
+
+Total \( I_{err} \) =  7*0.2 + 5*0.3
+
+\[
+V = 1 - (7*0.2 + 5*0.3)/12 -0.2 = 0.5583
+\]
+
+====================================================
+FODS - PG
+
+Structural Rules:
+1. Classes shown with proper notation
+2. Relationships with correct multiplicity notation
+3. Proper relationship types
+4. Attributes listed within classes: 
+5. No design decisions (visibilities, navigabilities, data types)
+
+Intended Meaning:
+1. Classes represent meaningful domain concepts
+2. Relationships reflect real-world connections
+3. Multiplicities reflect actual constraints
+
+Classes:
+1. User
+2. Order
+3. Order Item
+4. Product
+5. Tracking Information
+6. Preference Data
+
+Total classes = 6
+
+Attributes:
+- User:
+- ID
+- Name
+- Email
+- Phone Number
+- Address
+- Total: 5 attributes
+
+- Order:
+- ID
+- User ID
+- Order Date
+- Total Cost
+- Status
+- Total: 5 attributes
+- Order Item:
+
+- ID
+- Order ID
+- Product ID
+- Quantity
+- Unit Price
+- Total: 5 attributes
+- Product:
+
+- ID
+- Name
+- Description
+- Price
+- Total: 4 attributes
+
+- Tracking Information:
+- ID
+- Order ID
+- Tracking Number
+- Estimated Delivery Date
+- Total: 4 attributes
+
+- Preference Data:
+- ID
+- User ID
+- Preference Type
+- Preference Value
+- Total: 4 attributes
+
+Total attributes = 5 (User) + 5 (Order) + 5 (Order Item) + 4 (Product) + 4 (Tracking Information) + 4 (Preference Data) = 27 attributes
+
+Relationships:
+1. User to Order (one-to-many): A user can have multiple orders (UC-02: Place Order, "Has Order History").
+2. User to Preference Data (one-to-one): A user has preference data (UC-04, UC-05, "Has Preference Data").
+3. Order to Order Item (one-to-many): An order contains multiple order items ("Has Order Items").
+4. Order to Tracking Information (one-to-one): An order has tracking information (UC-03, "Has Tracking Information").
+5. Order Item to Product (many-to-one): An order item references a product ("Has Order Items" implies products).
+6. Order Item to Order (many-to-one): An order item belongs to an order ("Belongs to an Order").
+7. Tracking Information to Order (many-to-one): Tracking information belongs to an order ("Belongs to an Order").
+8. Preference Data to User (many-to-one): Preference data belongs to a user ("Belongs to a User").
+
+Total relationships = 8
+
+Total Elements (\( I \)):
+Classes + Relationships = 6 + 8 = 14 
+
+Total Errors (\( I_{err} \)):
+- No graphical notation: -0.5
+- Relationships lacking multiplicity: 8*0.3
+- Design decisions (PKs, FKs, example values): 6*0.3
+
+\[
+V = 1 - (8*0.3+6*0.3)/14 - 0.5 = 0.2
+\]
+
+---

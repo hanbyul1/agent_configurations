@@ -1,0 +1,419 @@
+TORS - TS
+The use case model consists of:
+- Actors: 2 (User, Employee).
+- Use Cases: 6 (Search Tour Information, View Tour Details, Reserve a Tour, Send Feedback, Login and Access Control, Manage Customers).
+- System Boundaries: 3 (Tours and Customers, Email Feedback System, Employee Login and Access Control).
+- Relationships: 
+- Actor-to-Use Case (Use relationships): 6 (User to Search, View, Reserve, Send Feedback; Employee to Login, Manage Customers).
+- Actor-to-Actor (Association relationships): 1 (User ↔ Employee).
+- Use Case-to-System Boundary (Boundary relationships): 6 (each use case is tied to a system boundary).
+
+Total elements \( I \):
+- Actors: 2
+- Use Cases: 6
+- System Boundaries: 3
+- Relationships: 6 
+
+\[
+I = 2 + 6 + 3 + 6 = 17
+\]
+
+Using the criteria from the previous input: Wrong notation (-0.3)
+Structural Rules (Syntactic):
+1. System boundary present: yes,  but wrong. (0.1)
+2. Actors connected to at least one use case: Yes, Incorrect notation for actor "user": 1 error (0.07).
+3. Proper relationships notation: Yes (0.15), 5 errors, 
+4. Unique identifiers for use cases: Yes, each use case has a distinct name (e.g., "Search Tour Information" vs. "View Tour Details").  (0.05)
+
+Syntatic Error: -0.3
+
+1. Use cases represent complete units of functionality: (0.1)
+- Search, View, Reserve, Send Feedback, Login, and Manage Customers all describe complete interactions (e.g., "Reserve a Tour" includes validation and selection). Pass. Incorrect use case for "view" in the diagram: 1 error.
+2. Actors represent distinct external entities: Yes. (0.1)
+- User and Employee are distinct (User is a customer, Employee is agency staff). Pass. 
+3. Relationships logically connect related functionalities: semantic violation.  (0.1)
+4. Use cases collectively cover system functionality: (0.2)
+
+Sematic Errors: 0 
+
+Validity
+\[
+V = 1 - 0/17 -0.3= 0.7
+\]
+
+====================================================
+TORS - PS
+
+The use case model includes: 
+- Actors: 3 (User, Employee, System).
+- Use Cases: 27 (VC-01 to VC-27
+- System Boundaries: 5 	(Tour Information Management, Reservation Management, Customer Information Management, Feedback Management, Login and Security).
+- Relationships:
+- Actor-to-Use Case (Use relationships): 
+- User: 6 use cases (VC-01, VC-03, VC-04, VC-05, VC-07, VC-09).
+- Employee: 15 use cases (VC-02, VC-06, VC-08, VC-10, VC-17, VC-18, VC-19, VC-20, VC-21, VC-22, VC-23, VC-24, VC-25, VC-26, VC-27).
+- System: 6 use cases (VC-11, VC-12, VC-13, VC-14, VC-15, VC-16).
+- Total: 6 + 15 + 6 = 27.
+
+Total elements \( I \):
+- Actors: 3
+- Use Cases: 27
+- System Boundaries: 5
+- Relationships: 27
+
+\[
+I = 3 + 27 + 5 + 27 = 62
+\]
+
+Structural Rules (Syntactic): No graphical notation. (-0.3)
+
+Syntatic Error: -0.3
+
+Intended Meaning (Semantic):
+1. Actors represent distinct external entities: No, System is not an actor (use case 11-16)
+
+Semantic Error: 1
+
+Validity
+\[
+V = 1 - 1/85-0.3 = 0.6882
+\]
+
+====================================================
+TORS - PG
+
+The use case model includes:
+- Actors: 2 (User, Employee).
+- Use Cases: 2 (View Tour Information, Manage Customers and Tours).
+- System Boundaries: 1 (System Boundary, as depicted in the diagram).
+- Relationships:
+- Actor-to-Use Case (Use relationships): 2 (User → View Tour Information, Employee → Manage Customers and Tours).
+- Actor-to-Actor (Association relationships): Not explicitly defined in the diagram.
+- Use Case-to-System Boundary (Boundary relationships): 2 (View Tour Information → System Boundary, Manage Customers and Tours → System Boundary).
+
+Total elements \( I \):
+- Actors: 2
+- Use Cases: 2
+- System Boundaries: 1
+- Relationships:  4
+
+\[
+I = 2 + 2 + 1 + 4 = 9
+\]
+
+Structural Rules (Syntactic): produced only graphical notation. 
+
+1. System boundary present: Yes, but wrong use (-0.1) 
+2. Proper relationships notation: No. wrong use between system boundary and use case (-0.1)
+- "Boundary" relationships connect use cases to the system boundary.
+
+Syntatic Error: -0.2
+
+Intended Meaning (Semantic): No textual description. 
+1. Use cases collectively cover system functionality: Some use case model information genereted in Task 1 and Task 4. Still missing "Login Functionality", (-0.02)
+
+Sematic Error: -0.02
+
+Validity
+\[
+V = 1 - 0.2 - 0.02 = 0.78
+\]
+
+It also includes sequence diagrams, class diagrams, design principles, unit tests, integration tests, and system tests. 
+====================================================
+SWS - TS
+
+The use case model includes:
+- Actors: 4 (User, Smart Contract, Decentralized App, System).
+- Use Cases: 8 (UC1: User Registration, UC2: Asset Management, UC3: Transaction Automation, UC4: Decentralized Application Interaction, UC5: Security Verification, UC6: Spending Limit Management, UC7: Gas Fee Optimization, UC8: Batch Transactions).
+- System Boundaries: 1 (System Boundary, as depicted in the diagram).
+- Relationships:
+- Actor-to-Use Case (Use relationships):
+- User: UC1, UC2, UC3, UC4, UC5, UC7, UC8 (7 relationships).
+- Smart Contract: UC1, UC2, UC3, UC4, UC7 (5 relationships).
+- Decentralized App: UC1, UC2, UC3, UC4 (4 relationships).
+- System: UC1, UC2, UC3, UC4, UC5, UC7, UC8 (7 relationships).
+- Total Use relationships: 7 + 5 + 4 + 7 = 23.
+
+Total elements \( I \):
+- Actors: 4
+- Use Cases: 8
+- System Boundaries: 1
+- Relationships: 23 (Use) 
+
+\[
+I = 4 + 8 + 1 + 23 = 46
+\]
+
+Structural Rules (Syntactic):
+1. System boundary present: Yes, but wrong. (-0.1)
+2. Proper relationships notation: Wrong notation for associations (-0.1)
+- "Use" relationships connect actors to use cases.
+- "Association" relationships between use cases are specified (e.g., UC1→UC2).
+- "Boundary" relationships connect use cases to the system boundary.
+- Pass.
+
+Syntatic Error: -0.2
+
+Intended Meaning (Semantic):
+2. Actors represent distinct external entities: 3 errors.
+- Smart Contract, Decentralized App, and System are not actors. 
+
+Sematic Errors: 3
+
+Validity
+\[
+V =1 - 3/46 - 0.2 = 0.7347
+\]
+
+====================================================
+SWS - PS
+
+The use case model includes:
+- Actors: 2 (User, Batch Transactions). Note: "Batch Transactions" is listed as an actor in the diagram, but this appears to be a mistake—it should be a use case, not an actor, as per the requirements. We’ll treat it as a use case for now and note the error.
+- Use Cases: 5 (UC-01: Create Smart Contract, UC-02: Enable Multi-Signature Authentication, UC-03: Recover Account, UC-04: Set Custom Spending Limits, UC-05: Manage Multiple Cryptocurrencies). Adding Batch Transactions (should be UC-06, but not listed in the use cases section): 6 use cases.
+- System Boundaries: 2 (System Boundary, Blockchain—as mentioned in the relationships).
+- Relationships:
+- Actor-to-Use Case (Use relationships):
+- User: UC-01, UC-02, UC-03, UC-04, UC-05 (5 relationships).
+- Batch Transactions (incorrectly listed as an actor): Should connect to a use case, but since it’s not a proper actor, we’ll exclude it from actor relationships.
+- Total Use relationships: 5.
+
+Total elements \( I \):
+- Actors: 1 (User; Batch Transactions is a mistake).
+- Use Cases: 6 (including Batch Transactions as a use case).
+- System Boundaries: 2.
+- Relationships: 5 (Use) 
+
+\[
+I = 1 + 6 + 2 + 5 = 14
+\]
+
+Structural Rules (Syntactic):
+1. System boundary present: Yes, but wrong (-0.1)
+2. Actors connected to at least one use case: No, User is not connected (-0.07)
+3. Proper relationships notation: No arrow. Wrong actor relationships (-0.1)
+
+Synatatic Error: -0.29
+
+Intended Meaning (Semantic):
+1. Actors represent distinct external entities: 1 error
+- User is a valid actor.
+- Batch Transactions as an actor is incorrect—it’s a functionality, not an entity (already noted as a structural violation).
+2. Use cases collectively cover system functionality: (-0.03)
+
+Semantic Error: 0.03 with 1 error
+
+Validity
+\[
+V = 1 - 1/14- 0.29 - 0.03 = 0.6085
+\]
+
+====================================================
+SWS - PG
+
+The use case model includes:
+- Actors: 1 (User).
+- Use Cases: 6 (Use Case 1: Create Account, Use Case 2: Execute Smart Contract, Use Case 3: Transfer Assets, Use Case 4: Social Recovery Options, Use Case 5: Account Abstraction, Use Case 6: Customizable Spending Limits).
+- System Boundaries: 1 (System Boundary).
+- Non-Functional Elements in Diagram: 3 (Security: NF-SEC-001, Usability: NF-USI-002, Performance: NF-PER-003, Scalability: NF-SCL-004). Note: These are not use cases but are incorrectly depicted as such in the diagram.
+- Relationships:
+- Actor-to-Use Case (Use relationships): User to 6 use cases (Create Account, Execute Smart Contract, Transfer Assets, Social Recovery Options, Account Abstraction, Customizable Spending Limits): 6 relationships.
+- Actor-to-Non-Functional Elements: User to Security, Usability, Performance, Scalability: 4 relationships (these are incorrect, as non-functional requirements are not use cases).
+- Use Case-to-System Boundary (Boundary relationships): 6 (each use case to System Boundary).
+
+Total elements \( I \):
+- Actors: 1
+- Use Cases: 6
+- System Boundaries: 1
+- Non-Functional Elements (incorrectly in diagram): 4
+- Relationships: 6 (Use, for actual use cases)
+
+\[
+I = 1 + 6 + 1 + 4 + 6 = 22
+\]
+
+Structural Rules (Syntactic):
+1. System boundary present: "System Boundary" is depicted. Pass. Wrong notation (-0.1)
+2. Proper relationships notation: wrong relationships (-0.1)
+3. Unique identifiers for use cases: Use Case 1 to Use Case 6 are uniquely identified. 
+
+\[
+I_{err} = -0.2 
+\]
+
+Intended Meaning (Semantic):
+1. Relationships logically connect related functionalities: 5 errors
+- User to actual use cases: Logical (e.g., User → Execute Smart Contract).
+- User to non-functional requirements: Illogical, as these are not use cases (already noted).
+- No explicit use case-to-use case relationships are defined, which is fine for this model.
+2. Use cases collectively cover system functionality: (-0.02)
+3. Improper use cases (Security, Performance, Scalability, Usaiblity): -0.1
+
+Syntactic Error: -0.12 with 5 errors. 
+
+Three use cases (Create Account, Execute Smart Contract, Transfer Assets) as part of use case model were produced in the output of Task 1. 
+
+Validity
+\[
+V = 1 - 5/22 - 0.32 = 0.4527
+\]
+
+====================================================
+FODS - TS
+
+The use case model includes:
+- Actors: 3 (User, System, System Administrator).
+- Use Cases: 8 (CA-001: Create Account, LO-001: Login, BM-001: Browse Menus, PO-001: Place Order, PG-001: Payment Gateway Integration, TO-001: Track Order, PF-001: Promotional Features, PR-001: Personalized Recommendations).
+- System Boundaries: 0 (System Boundary, as implied in the description).
+- Relationships:
+- Actor-to-Use Case (Use relationships):
+- User: CA-001, LO-001, BM-001, PO-001, PG-001, TO-001, PF-001, PR-001 (8 relationships).
+- System Administrator: PG-001, PF-001 (2 relationships).
+- Total Use relationships: 8 + 2 = 10.
+- Use Case-to-Use Case (Association relationships): 5 (CA-001→LO-001, BM-001→PO-001, PO-001→PG-001, TO-001→PF-001, PR-001→BM-001).
+- Use Case-to-System Boundary (Boundary relationships): 8 (each use case to System Boundary).
+
+Total elements \( I \):
+- Actors: 3
+- Use Cases: 8
+- System Boundaries: 0
+- Relationships: 10 (Use) 
+
+\[
+I =3 + 8 + 0 + 10 = 21
+\]
+
+Structural Rules (Syntactic): no diagram, -0.3
+1. System boundary present: No system boundary (-0.15)
+
+Syntatic Error: -0.45
+
+Intended Meaning (Semantic):
+1. Actors represent distinct external entities: Wrong second actors (2 errors)
+- User and System Administrator are distinct (User is the customer, System Administrator manages promotions and payment integrations). 
+
+Semantic Error: 2 errors
+
+Validity
+\[
+V = 1 - 2/21 - 0.45 = 0.4547
+\]
+
+====================================================
+FODS - PS
+
+The use case model includes:
+- Actors: 5 (Customer, Restaurant Staff, Delivery Driver, Payment Gateway, Loyalty Program).
+- Use Cases: 6 (Use Case 1.1: Browse Menu, Use Case 2.1: Place Order, Use Case 4.1: Receive Order, Use Case 5.1: Pick Up Order, Use Case 6.1: Process Payment, Use Case 7.1: Track Rewards).
+- System Boundaries: 1 (System Boundary).
+- Relationships:
+- Actor-to-Use Case (Use relationships):
+- Customer: Use Case 1.1, Use Case 2.1 (2 relationships).
+- Restaurant Staff: Use Case 4.1 (1 relationship).
+- Delivery Driver: Use Case 5.1 (1 relationship).
+- Payment Gateway: Use Case 6.1 (1 relationship).
+- Loyalty Program: Use Case 7.1 (1 relationship).
+- Total Use relationships: 2 + 1 + 1 + 1 + 1 = 6.
+- Use Case-to-Use Case (Association relationships): None explicitly defined in the diagram or description.
+- Use Case-to-System Boundary (Boundary relationships): 6 (each use case to System Boundary).
+
+Total elements \( I \):
+- Actors: 5
+- Use Cases: 7
+- System Boundaries: 1
+- Relationships: 7 (Use) 
+
+\[
+I = 5 + 7 + 1 + 7 = 20
+\]
+
+Structural Rules (Syntactic):
+1. System boundary present: Yes, but wrong notation (-0.1)
+2. Proper relationships notation: wrong notation (-0.1)
+
+Syntactic Error:  -0.2
+
+Intended Meaning (Semantic):
+1.. Actors represent distinct external entities: 2 errors. 
+- Customer, Restaurant Staff, Delivery Driver are valid actors.
+- Payment Gateway and Loyalty Program are questionable as actors—they are typically system components, not external entities. In use case modeling, actors should be external to the system. This is a semantic violation (2 elements: Payment Gateway, Loyalty Program).
+2. Use cases collectively cover system functionality: (-0.03)
+- Functional Requirements:
+1. Menu Browsing and Selection (Features 1.1, 1.2, 1.3): Covered by Use Case 1.1 (Browse Menu).
+2. Order Placement and Customization (Features 2.1, 2.2, 2.3): Covered by Use Case 2.1 (Place Order).
+3. Real-Time Order Tracking and Delivery Information (Features 3.1, 3.2, 3.3): Not covered—Use Case 5.1 (Pick Up Order) is for the driver, not the customer tracking the order.
+6. Mobile App Navigation and User Experience (Features 6.1, 6.2): Not covered—implied in Use Case 2.1 but not explicit.
+7. User Account Management (Features 7.1, 7.2): Not covered—no use cases for creating, editing, deleting accounts, or password recovery.
+- Missing use cases: Real-Time Order Tracking (for Customer), Promotional Offers, Personalized Recommendations, Mobile App Navigation, User Account Management (5 elements).
+
+Semantic Error: -0.03 with 2 errors
+
+Validity
+\[
+V = 1 - 2/20 - 0.2 - 0.03 = 0.67
+\]
+
+====================================================
+FODS - PG
+
+The use case model includes:
+- Actors: 3 (User, Order Taker, Payment Gateway). Note: "Customer" is mentioned in the diagram and use case specifications (Support Inquiry), which seems to be a duplicate of "User"—this inconsistency will be addressed as a violation.
+- Use Cases: 5 (Browse Menu, Place Order, Track Order, Complete Payment, Support Inquiry).
+- System Boundaries: Not explicitly drawn in the diagram, but implied in the use case specifications (e.g., "Customer's screen display," "Payment processing system"). 
+- Relationships:
+- Actor-to-Use Case (Use relationships):
+- User: Browse Menu, Place Order, Track Order (3 relationships).
+- Order Taker: Browse Menu, Place Order, Track Order, Support Inquiry (4 relationships).
+- Payment Gateway: Browse Menu, Place Order, Complete Payment (3 relationships).
+- Customer (assumed as User): Support Inquiry (1 relationship, but redundant due to actor inconsistency).
+- Total Use relationships: 3 + 4 + 3 + 1 = 11.
+- Use Case-to-Use Case (Association relationships): Implied in sequence diagrams:
+- Browse Menu → Place Order (User places order after browsing).
+- Place Order → Complete Payment (Payment follows order placement).
+- Total Association relationships: 2.
+- Use Case-to-System Boundary (Boundary relationships): 5 (each use case to the implied System Boundary).
+
+Total elements \( I \):
+- Actors: 3 (User, Order Taker, Payment Gateway; Customer is a duplicate).
+- Use Cases: 5
+- System Boundaries: 0
+- Relationships: 11 (Use) + 2 (Association) + 5 (Boundary) = 18
+
+\[
+I = 3 + 5 + 5 = 13
+\]
+
+Structural Rules (Syntactic):
+1. System boundary present: Not explicitly drawn in the diagram (-1.5)
+2. Proper relationships notation: wrong use between actors (-0.1)
+- "Use" relationships connect actors to use cases (e.g., User → Browse Menu).
+- "Association" relationships implied (Browse Menu → Place Order, Place Order → Complete Payment).
+- "Boundary" relationships implied but not drawn.
+
+Syntactic Error:  -0.25
+
+Intended Meaning (Semantic):
+2. Actors represent distinct external entities: 2 errors
+- Payment Gateway: Questionable as an actor—it’s typically a system component, not an external entity (1 violation).
+- Customer: Redundant with User (already noted as a structural violation).
+4. Use cases collectively cover system functionality: No. (-0.03)
+Uncovered functional requirements:
+1. User Authentication and Authorization: Not covered—no use case for account creation or login.
+5. Promotional Features: Not covered—no use case for discounts or loyalty programs.
+6. Personalized Recommendations: Not covered—no use case for recommendations.
+7. Mobile Optimization: Not covered—implied in user experience but not explicit.
+- Missing use cases: User Authentication and Authorization, Promotional Features, Personalized Recommendations, Mobile Optimization (4 elements).
+
+\[
+I_{err} = -0.03 with 2 errors
+\]
+
+Five use cases (Browse Menu, Place Order, Track Order, Complete Payment, . Support Inquiry) as part of use case model was produced in the output of Task 1. 
+
+Task 2 output also includes information about sequence diagram, and class diagram. 
+
+Validity
+\[
+V = 1 - 2/13 - 0.23 - 0.03 = 0.5861
+\]

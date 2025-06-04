@@ -1,0 +1,264 @@
+TORS - TS
+
+Structural Rules (3 rules per operation)
+1. Signature format (name, parameters, return type)
+2. Parameter types specified
+3. Return type specified
+
+Intended Meaning (4 rules per operation)
+1. Operation reflects system responsibility
+2. Parameters capture necessary inputs
+3. Return type appropriate for purpose
+4. Operation supports use case functionality
+
+For 6 operations, total checks \( I = 6 \times 7 = 42 \)
+
+ViewTourDetails
+- Parameters capture necessary inputs: no  
+- Responsibility match: no  
+- Supports use case: no
+
+3 errors
+
+ReserveATour
+- Params capture necessary input: no  
+- Clean semantic support (unclear division of responsibility): no
+
+2 errors
+
+3. ManageCustomers
+- Return type appropriate: no
+- Possibly weak support for complex use case: no
+
+2 errors
+
+Total errors \( I_{\text{err}} = 7 \)
+
+Validity
+
+\[
+V = 1 - 2/42 = 0.9523
+\]
+
+====================================================
+TORS - PS
+
+Structural Rules (3 rules per operation)
+1. Signature format (name, parameters, return type)
+2. Parameter types specified
+3. Return type specified
+
+Intended Meaning (4 rules per operation)
+1. Operation reflects system responsibility
+2. Parameters capture necessary inputs
+3. Return type appropriate for purpose
+4. Operation supports use case functionality
+
+Total checks:  
+\( I = 15 \text{ operations} \times 7 = 105 \)
+
+2. viewReservations: return type "Object[]" should be reservation. 
+6. createReservation: Input is too abstract ("object" lacks clarity for intended meaning) 
+7. getReservation: return type "Object" should be reservation.
+12. registerUser:  Input is vague; "object" could obscure semantics    
+13. loginAdmin: return type "adminUserObject" should be either "void" or "boolean".
+ 
+- Errors: 5 errors
+- All operations are not related to use cases as no use cases were produced in Task 4: 15 errors.
+
+\[
+I_{\text{err}} = 20, \quad I = 105
+\]
+\[
+V = 1 - 20/105 = 0.809
+\]
+
+====================================================
+TORS - PG
+
+Structural Rules (3 rules per operation)
+1. Signature format (name, parameters, return type)
+2. Parameter types specified
+3. Return type specified
+
+Intended Meaning (4 rules per operation)
+1. Operation reflects system responsibility
+2. Parameters capture necessary inputs
+3. Return type appropriate for purpose
+4. Operation supports use case functionality
+
+There are 21 operations.
+
+\[
+I = 21 \times 7 = 147
+\]
+
+4. DisplayErrorMessage: x internal
+5. PromptUserToRetryLoginCredential: x internal
+7. DisplayNoAvailableDatesTimes: x internal
+10. DisplaySuccessMessage: x internal
+11. DisplayNoExistingReservations: x internal
+
+Validity
+
+- Errors = 5*7
+
+\[
+V = 1 - 35/147 = 0.7619\]
+
+---
+
+====================================================
+SWS - TS
+
+"Raw Output: A clear implementation plan with training, tools, and ongoing review to ensure effective incident management processes."
+
+no concrete relevant output  = 0
+
+====================================================
+SWS - PS
+
+Structural Rules (3 rules per operation)
+1. Signature format (name, parameters, return type)
+2. Parameter types specified
+3. Return type specified
+
+Intended Meaning (4 rules per operation)
+1. Operation reflects system responsibility
+2. Parameters capture necessary inputs
+3. Return type appropriate for purpose
+4. Operation supports use case functionality
+
+7 unique system operations identified:
+
+1. createSmartContract(code: string, parameters: object, deploymentOptions: object): boolean
+2. enableMultiSignatureAuthentication(preferredUsers: array): void
+3. updateSpendingLimit(newLiermit: number): boolean
+4. viewCryptocurrencyPortfolio(): void: incorrect return type (1 error)
+5. manageCryptocurrency(symbol: string, action: 'buy' | 'sell' | 'transfer'): void. Incorrect return type (1 error)
+6. handleTransactionFailure(error: object): void: internal 
+7. correctAssetBalanceError(error: object): void: internal
+
+Syntactic errors: 0 
+
+Sematic errors: 
+- Incorrect return type: 2 (incorrect return type 4, 5) 
+- internal operation (6, 7): 2*7
+
+$I_{\text{err}} = 14+2$
+
+$$
+V = 1 - 16/49 = 0.6734
+$$
+
+====================================================
+SWS - PG
+
+Structural Rules (3 rules per operation)
+1. Signature format (name, parameters, return type)
+2. Parameter types specified
+3. Return type specified
+
+Intended Meaning (4 rules per operation)
+1. Operation reflects system responsibility
+2. Parameters capture necessary inputs
+3. Return type appropriate for purpose
+4. Operation supports use case functionality
+
+Wrong output: The outputs are not system operations, but use cases. Relevant descriptions about system operations are produced in the output of Task 6, 
+which are similar to the output of Task 5 produced by the TS configuration for FODS. So, the output of Task 6 was accepted for Task 5. 
+
+10 operations. 
+
+Syntactic errors: no formated operations. 10*3 = 30
+
+Sematic errors: 3 internal operations (6, 7, 8, actors not specified, and thus considered as internal) 3*2 = 6 (7-3-2)
+2 and 3 do not apply: 10*2 = 20
+
+\[
+V = 1 - (30+6+20) /70 = 0.2
+\]
+
+====================================================
+FODS - TS
+
+Structural Rules (3 rules per operation)
+1. Signature format (name, parameters, return type)
+2. Parameter types specified
+3. Return type specified
+
+Intended Meaning (4 rules per operation)
+1. Operation reflects system responsibility
+2. Parameters capture necessary inputs
+3. Return type appropriate for purpose
+4. Operation supports use case functionality
+
+10 operations. 
+
+Syntactic errors: no formated operations. 10*3 = 30
+
+Sematic errors: 2 are internal operations (3, 5), 2*2 (7-3-2) errors = 4
+- 2 and 3 do not apply: 10*2 = 20
+
+\[
+V = 1 - (30+4+20)/70 = 0.2285
+\]
+
+====================================================
+FODS - PS
+
+Structural Rules (3 rules per operation)
+1. Signature format (name, parameters, return type)
+2. Parameter types specified
+3. Return type specified
+
+Intended Meaning (4 rules per operation)
+1. Operation reflects system responsibility
+2. Parameters capture necessary inputs
+3. Return type appropriate for purpose
+4. Operation supports use case functionality
+
+\[
+I = 6 \text{ operations} \times 7 = 42 \text{ checks}
+\]
+
+2. `placeOrder(orderDetails: Order): void`: return should be confirmation. 
+4. `pickUpOrder(orderID: string, location: string): return should be updated location. 
+5. `processPayment(paymentMethod: PaymentMethod, amount: number): internal. 
+6. `trackRewards(customerID: string, rewardPoints: number): void`: internal
+
+- \( I_{\text{err}} = 2 + 2*7 \)
+
+
+Validity
+
+\[
+V = 1 - (2+2*7)/42 = 0.6190
+\]
+
+====================================================
+FODS - PG
+
+Structural Rules (3 rules per operation)
+1. Signature format (name, parameters, return type)
+2. Parameter types specified
+3. Return type specified
+
+Intended Meaning (4 rules per operation)
+1. Operation reflects system responsibility
+2. Parameters capture necessary inputs
+3. Return type appropriate for purpose
+4. Operation supports use case functionality
+
+\[
+I = 6 \times 7 = 42
+\]
+
+1. `browseMenu(userId: Integer, orderHistory: String): List<MenuItem>`
+`orderHistory` as a parameter is questionable — it should be fetched by the system, not passed by user
+
+Semantic Error: 1
+
+\[
+V = 1 - 1/42 = 0.9761
+\]

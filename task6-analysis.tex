@@ -1,0 +1,225 @@
+TORS - TS
+
+Structural Rules
+
+1. Lifelines represent existing objects from the domain.
+2. Proper message notation used.
+3. Return messages are shown where appropriate.
+
+Intended Meaning
+
+1. Interactions achieve operation goals.
+2. Message sequences are logical and follow use case success scenarios.
+3. Object collaborations make sense and align with functional roles.
+
+6*6 = 36
+
+Total Errors: 
+
+No graphical notation. (6*3 = 18)
+
+I = 6 (total sequence diagrams)
+
+Validity = 1 - 18/36 = 0.5
+
+====================================================
+TORS - PS
+
+Structural Rules
+
+1. Lifelines represent existing objects from the domain.
+2. Proper message notation used.
+3. Return messages are shown where appropriate.
+
+Intended Meaning
+
+1. Interactions achieve operation goals.
+2. Message sequences are logical and follow use case success scenarios.
+3. Object collaborations make sense and align with functional roles.
+
+total: 200*6
+Overall, wrong graphical notation: 200*0.5
+Lifelines are not objects (all extenal entities): 200*1
+No return messages: 200*1
+
+
+Validity =1- (200*0.5+200*1+200*1)/(200*6) = 0.5833
+====================================================
+TORS - PG
+
+Structural Rules
+
+1. Lifelines represent existing objects from the domain.
+2. Proper message notation used.
+3. Return messages are shown where appropriate.
+
+Intended Meaning
+
+1. Interactions achieve operation goals.
+2. Message sequences are logical and follow use case success scenarios.
+3. Object collaborations make sense and align with functional roles.
+
+Wrong output: produced classes and implementation.
+Sequence diagrams were produced in the output of Task 1. 
+4 sequence diagrams generated. : 4*7 = 28
+
+Syntactic Errors: 
+Wrong notation: 4*0.5
+Lifelines are not objects: 4*1
+No return messages: 4*1 
+
+Semantic Errors:	
+Unclear interaction: 4*0.5
+No message squence: 4*1
+Unclear object collaboration: 4*0.5
+
+1- (4*0.5 + 4*1 + 4*1+4*0.5+4*1+4*0.5)/28 =  0.3571
+
+====================================================
+SWS - TS
+
+Structural Rules
+
+1. Lifelines represent existing objects from the domain.
+2. Proper message notation used.
+3. Return messages are shown where appropriate.
+
+Intended Meaning
+
+1. Interactions achieve operation goals.
+2. Message sequences are logical and follow use case success scenarios.
+3. Object collaborations make sense and align with functional roles.
+
+Sequence diagram: 1*6 
+
+Syntactic Errors:
+Wrong graphical notation: 1*0.5
+Lifelines are not object: 1*1
+No return message: 1*1
+
+Semantic Errors: 
+Message sequences involves ambiguous messages (e.g., m3(), m4()): 1*0.5
+
+Almost identical sequence diagrams are produced in the output of Task 7. 
+
+Validity = 1-(1*0.5+1*1+1*1+1*0.5)/6 = 0.5
+ 
+====================================================
+SWS - PS
+
+Structural Rules
+
+1. Lifelines represent existing objects from the domain.
+2. Proper message notation used.
+3. Return messages are shown where appropriate.
+
+Intended Meaning
+
+1. Interactions achieve operation goals.
+2. Message sequences are logical and follow use case success scenarios.
+3. Object collaborations make sense and align with functional roles.
+
+# of sequence diagrams: 6 * 6
+
+Syntactic Errors:
+Wrong graphical notation: 6*0.5
+Lifelines are not objects: 6*1 (including invalid participant "P" as an actor)
+No return message: 6*1
+
+Semantic Errors:
+Unclear operation goals: 6*0.5
+Unclear message sequence: 6*0.5 
+unclear object collaboration: 6*0.5
+
+Validity = 1-(6*0.5 + 6*1 + 6*1 + 6*0.5 + 6*0.5 + 6*0.5)/(6*6) = 0.3333
+====================================================
+SWS - PG
+
+Structural Rules
+
+1. Lifelines represent existing objects from the domain.
+2. Proper message notation used.
+3. Return messages are shown where appropriate.
+
+Intended Meaning
+
+1. Interactions achieve operation goals.
+2. Message sequences are logical and follow use case success scenarios.
+3. Object collaborations make sense and align with functional roles.
+
+Invalid output: 0 (produced description for system operations for use cases, which has been used as the output of Task5)
+====================================================
+FODS - TS
+
+Structural Rules
+
+1. Lifelines represent existing objects from the domain.
+2. Proper message notation used.
+3. Return messages are shown where appropriate.
+
+Intended Meaning
+
+1. Interactions achieve operation goals.
+2. Message sequences are logical and follow use case success scenarios.
+3. Object collaborations make sense and align with functional roles.
+
+# of sequence diagrams: 6 * 6 = 36
+Syntactic Errors:
+Wrong graphical notation: 6*0.5
+Lifelines are not objects: 6*1 (including invalid operations "VerifyCredentials")
+Return messages specified but incorrect recepient: 6*0.5
+
+Semantic Errors:
+Unclear operation goals: 6*0.5
+Unclear message sequence: 6*0.7 
+unclear object collaboration: 6*0.7	
+
+Validity = 1- (6*0.5 + 6*1 +6*0.5 + 6*0.5 + 6*0.7 + 6*0.7)/(6*6)=0.35
+====================================================
+FODS - PS
+
+Structural Rules
+
+Structural Rules
+
+1. Lifelines represent existing objects from the domain.
+2. Proper message notation used.
+3. Return messages are shown where appropriate.
+
+Intended Meaning
+
+1. Interactions achieve operation goals.
+2. Message sequences are logical and follow use case success scenarios.
+3. Object collaborations make sense and align with functional roles.
+
+# of sequence diagrams: 5 * 6 = 30
+
+Syntactic Errors: 
+No graphical notations: 5*1
+Lifelines (Participants) are not objects: 5*1
+No return messages: 5*1
+
+Sematic Errors:
+
+Unclear operation goals: 5*0.6 (Some messages are ambiguous: e.g., p2(), s8(), etc.)
+Unclear message sequence: 5*0.5
+
+Validity = 1 -(5*1+5*1+5*1+5*0.6+5*0.5)/(5*6) = 0.3166
+====================================================
+FODS - PG
+
+Structural Rules
+
+1. Lifelines represent existing objects from the domain.
+2. Proper message notation used.
+3. Return messages are shown where appropriate.
+
+Intended Meaning
+
+1. Interactions achieve operation goals.
+2. Message sequences are logical and follow use case success scenarios.
+3. Object collaborations make sense and align with functional roles.
+
+Wrong graphical notation: 6*1
+
+Validity = 1-(6*1)/(6*6) = 0.8333

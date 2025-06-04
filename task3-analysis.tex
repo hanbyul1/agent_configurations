@@ -1,0 +1,883 @@
+TORS - TS
+
+Structural Rules:
+1. Required sections: Pre/postconditions, main flow, alternative flows.
+2. Sequential numbering of steps.
+3. Clear actor-system interaction format.
+
+Intended Meaning Rules:
+1. Pre/postconditions must be logical.
+2. Main flow achieves the use case goal.
+3. Alternative flows handle exceptions appropriately.
+4. Steps describe meaning clearly.
+
+Use Case 1: Search Tour Information
+- Sections: 4 (preconditions, postconditions, main flow, alternative flows).
+- Main Flow Steps: 4 steps.
+- Alternative Flows: 3 scenarios (treated as 3 steps for simplicity).
+- Total elements: ( 4 + 4 + 3 = 11 ).
+
+Use Case 2: View Tour Details
+- Sections: 4.
+- Main Flow Steps: 4 steps.
+- Alternative Flows: 2 scenarios.
+- Total elements: ( 4 + 4 + 2 = 10 ).
+
+Use Case 3: Reserve a Tour
+- Sections: 4.
+- Main Flow Steps: 4 steps.
+- Alternative Flows: 3 scenarios.
+- Total elements: ( 4 + 4 + 3 = 11 ).
+
+Use Case 4: Send Feedback
+- Sections: 4.
+- Main Flow Steps: 3 steps.
+- Alternative Flows: 2 scenarios.
+- Total elements: ( 4 + 3 + 2 = 9 ).
+
+Use Case 5: Login
+- Sections: 4.
+- Main Flow Steps: 3 steps.
+- Alternative Flows: 2 scenarios.
+- Total elements: ( 4 + 3 + 2 = 9 ).
+
+Use Case 6: Manage Customers
+- Sections: 4.
+- Main Flow Steps: 3 steps (includes sub-actions: view, create, update, delete as part of step 2).
+- Alternative Flows: 2 scenarios.
+- Total elements: ( 4 + 3 + 2 = 9 ).
+
+Total I for all use cases: ( 11 + 10 + 11 + 9 + 9 + 9 = 59 ).
+
+Use Case 1: Search Tour Information
+- Intended Meaning:
+- Alternative flows handle exceptions (no matches, invalid query, technical issues): No indication of base step. 3 errors
+- Errors: 3.
+
+Use Case 2: View Tour Details
+- Intended Meaning:
+- Alternative flows handle exceptions: Pass. No indication of base step. 2 errors
+- Errors: 2.
+
+Use Case 3: Reserve a Tour
+- Intended Meaning:
+- Alternative flows handle exceptions: 3 errors
+- Errors: 3.
+
+Use Case 4: Send Feedback
+- Intended Meaning:
+- Alternative flows handle exceptions: 2 errors
+- Errors: 2.
+
+Use Case 5: Login
+- Intended Meaning:
+- Alternative flows handle exceptions: 2 errors
+- Errors: 2.
+
+Use Case 6: Manage Customers
+- Intended Meaning:
+- Alternative flows handle exceptions: 2 errors
+- Errors: 2.
+
+Total Errors: ( 3 + 2 + 3 + 2 + 2 + 2 = 14 /4 (because it is simply about missing base steps)).
+
+Validity
+[
+V = 1 - (14/4)/59 = 0.9406
+]
+
+========================
+TORS - PS
+
+Structural Rules:
+1. Required sections: Pre/postconditions, main flow, alternative flows.
+2. Sequential numbering of steps.
+3. Clear actor-system interaction format.
+
+Intended Meaning Rules:
+1. Pre/postconditions must be logical.
+2. Main flow achieves the use case goal.
+3. Alternative flows handle exceptions appropriately.
+4. Steps describe meaning clearly.
+
+Use Case 1: User Logs In
+- Sections: Precondition, (implied: access granted/denied), trigger, description (main flow): 3 sections.
+- Trigger: 1 steps (submit form, verify credentials, grant access, deny access if invalid).
+- Description: Implied in description (invalid credentials case), counted as 4 steps.
+- Total elements: ( 3 + 1 + 4 = 8 ).
+
+Use Case 2: User Views Reservations
+- Sections: Precondition, (implied: reservations displayed), trigger, description: 3 sections.
+- Trigger: 2 steps (retrieve reservations, display reservations).
+- Description: None explicitly stated: 2.
+- Total elements: ( 3 + 2 + 2 = 7 ).
+
+Use Case 3: User Updates User Information
+- Sections: Precondition, postcondition (implied: info updated), trigger, description: 3 sections.
+- Trigger: 3 steps (retrieve info, prompt for new info, update info).
+- Description: None: 0.
+- Total elements: ( 3 + 3 +3 = 9 ).
+
+Use Case 4: User Provides Feedback
+- Sections: Precondition, postcondition (implied: feedback saved), trigger, description: 3 sections.
+- Trigger: 3 steps (prompt for feedback, select rating, save feedback).
+- Description: None: 0.
+- Total elements: ( 3 + 3 + 3 = 9 ).
+
+Use Case 5: System Cancels Feedback Request
+- Sections: Precondition, postcondition (implied: feedback canceled), trigger, description: 3 sections.
+- Trigger: 3 steps (retrieve requests, identify expired/invalid, update requests).
+- Description: None: 0.
+- Total elements: ( 3 + 1 + 3 = 7 ).
+
+Total I for all use cases: ( 8 + 7 + 9 + 9 + 7 = 40 ).
+
+Use Case 1: User Logs In
+- Missing explicit "postconditions" and "Alternative Flows" sections (description combines both): 2 error (missing alternative flows section).
+- Wrong labels "Trigger" and "Description" and wteps not numbered: 0.3 error.
+- Alternative flows handle exceptions (invalid credentials): missing.
+- Errors: 3.
+
+Use Case 2: User Views Reservations
+- Missing explicit "postconditions" and "Alternative Flows" sections: 2 error (missing alternative flows).
+- Wrong labels "Trigger" and "Description" and wteps not numbered: 0.3 error.
+- Alternative flows missing (e.g., no reservations found):.
+- Errors: 3.
+
+Use Case 3: User Updates User Information
+- Missing explicit "postconditions" and "Alternative Flows" sections: 2 error (missing alternative flows).
+- Wrong labels "Trigger" and "Description" and wteps not numbered: 0.3 error.
+- Errors: 3.
+
+Use Case 4: User Provides Feedback
+- Missing explicit "postconditions" and "Alternative Flows" sections: 2 error (missing alternative flows).
+- Wrong labels "Trigger" and "Description" and wteps not numbered: 0.3 error.
+- Errors: 3.
+
+Use Case 5: System Cancels Feedback Request
+- Missing explicit "postconditions" and "Alternative Flows" sections: 2 error (missing alternative flows).
+- Wrong labels "Trigger" and "Description" and wteps not numbered: 0.3 error.
+- Errors: 3.
+
+Total Errors: ( 2.3*5 = 11.5 ).
+
+Validity
+[
+V = 1 - 11.5/40 = 0.7125
+]
+
+========================
+TORS - PG
+
+Structural Rules:
+1. Required sections: Pre/postconditions, main flow, alternative flows.
+2. Sequential numbering of steps.
+3. Clear actor-system interaction format.
+
+Intended Meaning Rules:
+1. Pre/postconditions must be logical.
+2. Main flow achieves the use case goal.
+3. Alternative flows handle exceptions appropriately.
+4. Steps describe meaning clearly.
+
+Use Case 1: View Tour Information (UC-01)
+- Sections: 4 (preconditions, postconditions, main flow, alternative flows).
+- Main Flow Steps: 3 steps.
+- Alternative Flows: 2 scenarios (invalid login, no reservation data), counted as 2 steps.
+- Total elements: ( 4 + 3 + 2 = 9 ).
+
+Use Case 2: Make a Reservation (UC-02)
+- Sections: 4.
+- Main Flow Steps: 4 steps.
+- Alternative Flows: 2 scenarios (already booked, no available dates/times), counted as 2 steps.
+- Total elements: ( 4 + 4 + 2 = 10 ).
+
+Use Case 3: Cancel Existing Reservation (UC-03)
+- Sections: 4.
+- Main Flow Steps: 3 steps.
+- Alternative Flows: 2 scenarios (no existing reservations, success message), counted as 2 steps.
+- Total elements: ( 4 + 3 + 2 = 9 ).
+
+Total Elements: ( 9 + 10 + 9 = 28 ).
+
+Use Case 1: View Tour Information (UC-01)
+- Alternative flows handle exceptions appropriately (invalid login, no data): No base step. 1 error
+- Errors: 1.
+
+Use Case 2: Make a Reservation (UC-02)
+- Main flow does not fully achieve goal—user selects a date/time, but there’s no step confirming the reservation is created (postcondition states "new reservation is created"): 1 error (incomplete main flow).
+- Alternative flows handle exceptions: No base step. 1 error
+- Errors: 2.
+
+Use Case 3: Cancel Existing Reservation (UC-03)
+- Main flow does not achieve goal—system presents reservation status, but there’s no step to cancel the reservation (postcondition states "reservation is cancelled"): 1 error (incomplete main flow).
+- Alternative flows partially handle exceptions: No base step. 1 error
+- Errors: 2.
+
+Total Errors: ( 1 + 2 + 2 = 5 /4 (because it is simply about missing steps in the main flow or missing base steps in the alternative flow)).
+
+Validity 
+
+[
+V = 1 - (5/4)/28 = 0.9553
+]
+========================
+SWS - TS
+
+Structural Rules:
+1. Required sections: Pre/postconditions, main flow, alternative flows.
+2. Sequential numbering of steps.
+3. Clear actor-system interaction format.
+
+Intended Meaning Rules:
+1. Pre/postconditions must be logical.
+2. Main flow achieves the use case goal.
+3. Alternative flows handle exceptions appropriately.
+4. Steps describe meaning clearly.
+
+Use Case 1: User Registration (UC1)
+- Sections: 4 (preconditions, postconditions, main flow, alternative flows).
+- Main Flow Steps: 4 steps.
+- Alternative Flows: 2 scenarios (invalid info, verification failure, account lockout), counted as 2 steps.
+- Total elements: ( 4 + 4 + 2 = 10 ).
+
+Use Case 2: Asset Management (UC2)
+- Sections: 4.
+- Main Flow Steps: 3 steps.
+- Alternative Flows: 2 scenarios (asset transfer, error handling), counted as 3 steps (asset transfer has 2 sub-steps).
+- Total elements: ( 4 + 3 + 3 = 10 ).
+
+Use Case 3: Transaction Automation (UC3)
+- Sections: 4.
+- Main Flow Steps: 3 steps.
+- Alternative Flows: 2 scenarios (error handling, insufficient funds), counted as 2 steps.
+- Total elements: ( 4 + 3 + 2 = 9 ).
+
+Use Case 4: Decentralized Application Interaction (UC4)
+- Sections: 4.
+- Main Flow Steps: 3 steps.
+- Alternative Flows: 2 scenarios (error handling, insufficient funds), counted as 2 steps.
+- Total elements: ( 4 + 3 + 2 = 9 ).
+
+Use Case 5: Security Verification (UC5)
+- Sections: 4.
+- Main Flow Steps: 3 steps.
+- Alternative Flows: 2 scenarios (error handling, account lockout), counted as 2 steps.
+- Total elements: ( 4 + 3 + 2 = 9 ).
+
+Use Case 6: Gas Fee Optimization (UC7)
+- Sections: 4.
+- Main Flow Steps: 3 steps.
+- Alternative Flows: 2 scenarios (error handling, insufficient funds), counted as 2 steps.
+- Total elements: ( 4 + 3 + 2 = 9 ).
+
+Use Case 7: Asset Transfer (UC8)
+- Sections: 4.
+- Main Flow Steps: 3 steps.
+- Alternative Flows: 2 scenarios (error handling, insufficient funds), counted as 2 steps.
+- Total elements: ( 4 + 3 + 2 = 9 ).
+
+Use Case 8: Error Handling (UC9)
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 3 steps.
+- Alternative Flows: None.
+- Total elements: ( 3 + 3 + 0 = 6 ).
+
+Use Case 9: Account Lockout (UC10)
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 3 steps.
+- Alternative Flows: None.
+- Total elements: ( 3 + 3 + 0 = 6 ).
+
+Use Case 10: Account Unlocking (UC11)
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 3 steps.
+- Alternative Flows: None.
+- Total elements: ( 3 + 3 + 0 = 6 ).
+
+Use Case 11: Account Management (UC12)
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 3 steps.
+- Alternative Flows: None.
+- Total elements: ( 3 + 3 + 0 = 6 ).
+
+Use Cases 12–94 (UC13–UC90)
+Most of these use cases (e.g., Security Auditing, System Maintenance, etc.) follow a similar structure:
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 3 steps.
+- Alternative Flows: None.
+- Total elements per use case: ( 3 + 3 + 0 = 6 ).
+
+There are 94 total use cases, so for UC13–UC90 (78 use cases):
+- Total elements: ( 78 × 6 = 468 ).
+
+There are 6 duplciates out of 90. So 84 use cases. 
+
+Total I for all use cases:
+[
+11 + 10 + 9 + 9 + 9 + 9 + 9 + 6 + 6 + 6 + 6 + 468 = 552
+]
+
+Use Case 1: User Registration (UC1)
+- Alternative flows handle exceptions: no base step. 1 error.
+- Errors: 1.
+
+Use Case 2: Asset Management (UC2)
+- Alternative flows handle exceptions: no base step. 1 error.
+- Errors: 1.
+
+Use Case 3: Transaction Automation (UC3)
+- Alternative flows handle exceptions: no base step. 1 error.
+- Errors: 1.
+
+Use Case 4: Decentralized Application Interaction (UC4)
+- Alternative flows handle exceptions: no base step. 1 error.
+- Errors: 1.
+
+Use Case 5: Security Verification (UC5)
+- Alternative flows handle exceptions: no base step. 1 error.
+- Errors: 1.
+
+Use Case 6: Gas Fee Optimization (UC7)
+- Alternative flows handle exceptions: no base step. 1 error.
+- Errors: 1.
+
+Use Case 7: Asset Transfer (UC8)
+- Alternative flows handle exceptions: no base step. 1 error.
+- Errors: 1.
+
+Use Case 8: Error Handling (UC9)
+- Alternative flows missing (e.g., repeated errors): 1 error.
+- Errors: 1.
+
+Use Case 9: Account Lockout (UC10)
+- Alternative flows missing (e.g., user appeal): 1 error.
+- Errors: 1.
+
+Use Case 10: Account Unlocking (UC11)
+- Alternative flows missing (e.g., verification failure): 1 error.
+- Errors: 1.
+
+Use Case 11: Account Management (UC12)
+- Alternative flows missing (e.g., invalid input): 1 error.
+- Errors: 1.
+
+Use Cases 12–94 (UC13–UC90)
+These use cases (e.g., Security Auditing, System Maintenance, etc.) are repetitive and follow a similar structure:
+- Alternative flows missing (e.g., error scenarios): 1 error.
+- Errors per use case: 1.
+- Total errors for 78 use cases: ( 78 × 1 = 78 ).
+
+Total I_err:
+[
+(7/4) + 82: because it is simply about missing base steps in the alternative flow in 7 use cases. 
+]
+
+Step 3: Compute Validity ( V )
+[
+V = 1 - ((7/4)+82)/552 = 0.8482
+]
+
+=============================
+SWS - PS
+
+Structural Rules:
+1. Required sections: Pre/postconditions, main flow, alternative flows.
+2. Sequential numbering of steps.
+3. Clear actor-system interaction format.
+
+Intended Meaning Rules:
+1. Pre/postconditions must be logical.
+2. Main flow achieves the use case goal.
+3. Alternative flows handle exceptions appropriately.
+4. Steps describe meaning clearly.
+
+Step  RAT1: Define the Elements ( I )
+Each use case specification consists of elements based on the structural rules:
+1. Required sections: Pre/postconditions, main flow, alternative flows.
+2. Sequential numbering of steps.
+3. Clear actor-system interaction format.
+
+We’ll count the elements as follows:
+- Sections: Preconditions, postconditions, main flow, alternative flows (4 sections).
+- Steps: Each step in the main flow and alternative flows.
+
+Use Case 1: Create Smart Contract (UC-01)
+- Sections: 4 (preconditions, postconditions, main flow, alternative flows).
+- Main Flow Steps: 5 steps.
+- Alternative Flows: 2 scenarios (invalid input, blockchain issues), counted as 2 steps.
+- Total elements: ( 4 + 5 + 2 = 11 ).
+
+Use Case 2: Enable Multi-Signature Authentication (UC-02)
+- Sections: 4.
+- Main Flow Steps: 5 steps.
+- Alternative Flows: 2 scenarios (user cancels, verification issues), counted as 2 steps.
+- Total elements: ( 4 + 5 + 2 = 11 ).
+
+Use Case 3: Recover Account (UC-03)
+- Sections: 4.
+- Main Flow Steps: 5 steps.
+- Alternative Flows: 2 scenarios (incorrect recovery info, lockout expiration), counted as 2 steps.
+- Total elements: ( 4 + 5 + 2 = 11 ).
+
+Use Case 4: Set Custom Spending Limits (UC-04)
+- Sections: 4.
+- Main Flow Steps: 3 steps.
+- Alternative Flows: 2 scenarios (inadequate data, policy constraints), counted as 2 steps.
+- Total elements: ( 4 + 3 + 2 = 9 ).
+
+Use Case 5: Manage Multiple Cryptocurrencies (UC-05)
+- Sections: 4.
+- Main Flow Steps: 4 steps.
+- Alternative Flows: 2 scenarios (asset balance errors, transaction failure), counted as 2 steps.
+- Total elements: ( 4 + 4 + 2 = 10 ).
+
+Total I for all use cases:
+[
+11 + 11 + 11 + 9 + 10 = 52
+]
+
+Step 2: Identify Errors ( I_err )
+We evaluate each use case against the structural rules and intended meaning rules:
+
+Structural Rules:
+1. Required sections: Pre/postconditions, main flow, alternative flows.
+2. Sequential numbering of steps.
+3. Clear actor-system interaction format.
+
+Intended Meaning Rules:
+1. Pre/postconditions must be logical.
+2. Main flow achieves the use case goal.
+3. Alternative flows handle exceptions appropriately.
+4. Steps describe meaning clearly.
+
+Use Case 1: Create Smart Contract (UC-01)
+- Structural:
+- Alternative flows handle exceptions (invalid input, blockchain issues): No base step. 1 error
+- Errors: 1.
+
+Use Case 2: Enable Multi-Signature Authentication (UC-02)
+- Structural:
+- Alternative flows handle exceptions: No base step. 1 error
+- Errors: 1.
+
+Use Case 3: Recover Account (UC-03)
+- Structural:
+- Alternative flows handle exceptions: No base step. 1 error
+- Errors: 1.
+
+Use Case 4: Set Custom Spending Limits (UC-04)
+- Structural:
+- Alternative flows handle exceptions: No base step. 1 error
+- Errors: 1.
+
+Use Case 5: Manage Multiple Cryptocurrencies (UC-05)
+- Structural:
+- Alternative flows handle exceptions: No base step. 1 error
+- Errors: 1.
+
+Total I_err: (1 + 1 + 1 + 1 + 1)/4: because it is simply about missing base steps in the alternative flow in 7 use cases.
+
+Step 3: Compute Validity ( V )
+[
+V = 1 - (5/4)/52 = 0.9759
+]
+
+========================
+SWS - PG
+
+Structural Rules:
+1. Required sections: Pre/postconditions, main flow, alternative flows.
+2. Sequential numbering of steps.
+3. Clear actor-system interaction format.
+
+Intended Meaning Rules:
+1. Pre/postconditions must be logical.
+2. Main flow achieves the use case goal.
+3. Alternative flows handle exceptions appropriately.
+4. Steps describe meaning clearly.
+
+Use Case 1: Create Account (CU-001)
+- Sections: 4 (preconditions, postconditions, main flow, alternative flows).
+- Main Flow Steps: 5 steps.
+- Alternative Flows: 2 scenarios (invalid info, duplicate account), counted as 2 steps.
+- Total elements: ( 4 + 5 + 2 = 11 ).
+
+Use Case 2: Execute Smart Contract (CU-002)
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 5 steps.
+- Alternative Flows: None.
+- Total elements: ( 3 + 5 + 0 = 8 ).
+
+Use Caseaphthal: Transfer Assets (CU-003)
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 5 steps.
+- Alternative Flows: None.
+- Total elements: ( 3 + 5 + 0 = 8 ).
+
+Use Case 4: Social Recovery Options (CU-004)
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 4 steps.
+- Alternative Flows: None.
+- Total elements: ( 3 + 4 + 0 = 7 ).
+
+Use Case 5: Account Abstraction (CU-005)
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 4 steps.
+- Alternative Flows: None.
+- Total elements: ( 3 + 4 + 0 = 7 ).
+
+Use Case 6: Security Checks (CU-006)
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 4 steps.
+- Alternative Flows: None.
+- Total elements: ( 3 + 4 + 0 = 7 ).
+
+Use Case 7: Performance and Scalability (CU-007)
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 4 steps.
+- Alternative Flows: None.
+- Total elements: ( 3 + 4 + 0 = 7 ).
+
+Total I for all use cases:
+[
+11 + 8 + 8 + 7 + 7 + 7 + 7 = 55
+]
+
+Use Case 1: Create Account (CU-001)
+- Alternative flows handle exceptions (invalid info, duplicate account): No base step. 1 error
+- Errors: 1.
+
+Use Case 2: Execute Smart Contract (CU-002)
+- Alternative flows missing (e.g., insufficient funds, invalid contract address): 1 error.
+- Errors: 1.
+
+Use Case 3: Transfer Assets (CU-003)
+- Alternative flows missing (e.g., invalid recipient address, insufficient funds): 1 error.
+- Errors: 1.
+
+Use Case 4: Social Recovery Options (CU-004)
+- Alternative flows missing (e.g., failed verification, email not received): 1 error.
+- Errors: 1.
+
+Use Case 5: Account Abstraction (CU-005)
+- Alternative flows missing (e.g., invalid address, encryption failure): 1 error.
+- Errors: 1.
+
+Use Case 6: Security Checks (CU-006)
+- Alternative flows missing (e.g., no vulnerabilities found, check failure): 1 error.
+- Errors: 1.
+
+Use Case 7: Performance and Scalability (CU-007) 
+- Alternative flows missing (e.g., no bottlenecks found, optimization failure): 1 error.
+- Errors: 1.
+
+Total Errors:
+[
+1/4 + 6: because it is simply about missing base steps in the alternative flow in 1 use cases. 
+]
+
+A full set of 10 use case specification was produced in the output of Task 5. It includes additional five use cases (Social Network Integration, Account Recovery, System Update, Password Reset, Account Lockout). The existing ones are similar, but not identical. 
+
+For all five use cases:
+
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 4 steps.
+- Total elements: ( 3 + 4 = 7 ).
+
+additional elements: 5*7 = 35
+
+These all miss alternative flows (5 errors)
+
+Validity
+[
+V = 1 - (1/4+6+5)/(55 + 35) = 0.875
+]
+
+========================
+FODS - TS
+
+Step 1: Define the Elements ( I )
+Each use case specification consists of elements based on the structural rules:
+1. Required sections: Pre/postconditions, main flow, alternative flows.
+2. Sequential numbering of steps.
+3. Clear actor-system interaction format.
+
+Use Case 1: Create Account (CA-001)
+- Sections: 4 (preconditions, postconditions, main flow, alternative flows).
+- Main Flow Steps: 6 steps.
+- Alternative Flows: 3 scenarios (invalid username/password, account exists, system unavailable), counted as 3 steps. 
+- Total elements: ( 4 + 6 + 3 = 13 ).
+
+Use Case 2: Login (LO-001)
+- Sections: 4.
+- Main Flow Steps: 4 steps.
+- Alternative Flows: 2 scenarios (invalid credentials, account inactive), counted as 2 steps.
+- Total elements: ( 4 + 4 + 2 = 10 ).
+
+Use Case 3: Browse Menus (BM-001)
+- Sections: 4.
+- Main Flow Steps: 4 steps.
+- Alternative Flows: 2 scenarios (invalid filter, no items found), counted as 2 steps.
+- Total elements: ( 4 + 4 + 2 = 10 ).
+
+Use Case 4: Place Order (PO-001)
+- Sections: 4.
+- Main Flow Steps: 4 steps.
+- Alternative Flows: 2 scenarios (invalid order, payment failure), counted as 2 steps.
+- Total elements: ( 4 + 4 + 2 = 10 ).
+
+Use Case 5: Payment Gateway Integration (PG-001)
+- Sections: 4.
+- Main Flow Steps: 4 steps.
+- Alternative Flows: 2 scenarios (payment failure, transaction rejected), counted as 2 steps.
+- Total elements: ( 4 + 4 + 2 = 10 ).
+
+Use Case 6: Track Order (TO-001)
+- Sections: 4.
+- Main Flow Steps: 4 steps.
+- Alternative Flows: 2 scenarios (invalid order, update failure), counted as 2 steps.
+- Total elements: ( 4 + 4 + 2 = 10 ).
+
+Use Case 7: Personalized Recommendations (PR-001)
+- Sections: 4.
+- Main Flow Steps: 4 steps.
+- Alternative Flows: 2 scenarios (invalid recommendations, generation failure), counted as 2 steps.
+- Total elements: ( 4 + 4 + 2 = 10 ).
+
+Total I for all use cases:
+[
+13 + 10 + 10 + 10 + 10 + 10 + 10 = 73
+]
+
+Use Case 1: Create Account (CA-001)
+- Alternative flows handle exceptions: no base step. 1 error. 
+- Errors: 1.
+
+Use Case 2: Login (LO-001)
+- Alternative flows handle exceptions: no base step. 1 error.
+- Errors: 1.
+
+Use Case 3: Browse Menus (BM-001)
+- Alternative flows handle exceptions: no base step. 1 error. 
+- Errors: 1.
+
+Use Case 4: Place Order (PO-001)
+- Alternative flows handle exceptions: no base step. 1 error. 
+- Errors: 1.
+
+Use Case 5: Payment Gateway Integration (PG-001)
+- Alternative flows handle exceptions: no base step. 1 error. 
+- Errors: 1.
+
+Use Case 6: Track Order (TO-001)
+- Alternative flows handle exceptions: no base step. 1 error. 
+- Errors: 1.
+
+Use Case 7: Personalized Recommendations (PR-001)
+- Alternative flows handle exceptions: no base step. 1 error. 
+- Errors: 1.
+
+Total Errors:
+[
+1 + 1 + 1 + 1 + 1 + 1 + 1 = 7
+]
+
+Validity
+[
+V = 1 - (7/4)/73 = 0.9760
+]
+
+========================
+FODS - PS
+
+Structural Rules:
+1. Required sections: Pre/postconditions, main flow, alternative flows.
+2. Sequential numbering of steps.
+3. Clear actor-system interaction format.
+
+Intended Meaning Rules:
+1. Pre/postconditions must be logical.
+2. Main flow achieves the use case goal.
+3. Alternative flows handle exceptions appropriately.
+4. Steps describe meaning clearly.
+
+Use Case 1.1: Browse Menu
+- Sections: 2 (preconditions, postconditions; missing main flow and alternative flows).
+- Main Flow Steps: 0 (missing).
+- Alternative Flows: 0 (missing).
+- Total elements: ( 2 + 0 + 0 = 2 ).
+
+Use Case 2.1: Place Order
+- Sections: 2 (preconditions, postconditions; missing main flow and alternative flows).
+- Main Flow Steps: 0 (missing).
+- Alternative Flows: 0 (missing).
+- Total elements: ( 2 + 0 + 0 = 2 ).
+
+Use Case 4.1: Receive Order
+- Sections: 2 (preconditions, postconditions; missing main flow and alternative flows).
+- Main Flow Steps: 0 (missing).
+- Alternative Flows: 0 (missing).
+- Total elements: ( 2 + 0 + 0 = 2 ).
+
+Use Case 5.1: Pick Up Order
+- Sections: 2 (preconditions, postconditions; missing main flow and alternative flows).
+- Main Flow Steps: 0 (missing).
+- Alternative Flows: 0 (missing).
+- Total elements: ( 2 + 0 + 0 = 2 ).
+
+Use Case 6.1: Process Payment
+- Sections: 2 (preconditions, postconditions; missing main flow and alternative flows).
+- Main Flow Steps: 0 (missing).
+- Alternative Flows: 0 (missing).
+- Total elements: ( 2 + 0 + 0 = 2 ).
+
+Use Case 7.1: Track Rewards
+- Sections: 2 (preconditions, postconditions; missing main flow and alternative flows).
+- Main Flow Steps: 0 (missing).
+- Alternative Flows: 0 (missing).
+- Total elements: ( 2 + 0 + 0 = 2 ).
+
+Total I for all use cases:
+[
+2 + 2 + 2 + 2 + 2 + 2 = 12
+]
+
+Use Case 1.1: Browse Menu
+- Missing main flow: 1 error.
+- Missing alternative flows: 1 error.
+- Main flow missing (cannot achieve goal): 1 error.
+- Alternative flows missing (no exception handling): 1 error.
+- Errors: 2.
+
+Use Case 2.1: Place Order
+- Missing main flow: 1 error.
+- Missing alternative flows: 1 error.
+- Main flow missing: 1 error.
+- Alternative flows missing: 1 error.
+- Errors: 2.
+
+Use Case 4.1: Receive Order
+- Missing main flow: 1 error.
+- Missing alternative flows: 1 error.
+- Main flow missing: 1 error.
+- Alternative flows missing: 1 error.
+- Errors: 2.
+
+Use Case 5.1: Pick Up Order
+- Missing main flow: 1 error.
+- Missing alternative flows: 1 error.
+- Main flow missing: 1 error.
+- Alternative flows missing: 1 error.
+- Errors: 2.
+
+Use Case 6.1: Process Payment
+- Missing main flow: 1 error.
+- Missing alternative flows: 1 error.
+- Main flow missing: 1 error.
+- Alternative flows missing: 1 error.
+- Errors: 2.
+
+Use Case 7.1: Track Rewards
+- Missing main flow: 1 error.
+- Missing alternative flows: 1 error.
+- Main flow missing: 1 error.
+- Alternative flows missing: 1 error.
+- Errors: 2.
+
+Total Errors:
+[
+2 + 2 + 2 + 2 + 2 + 2 = 12
+]
+
+Validity
+[
+V = 1 - 12/12 = 0 + 0.2 (for having pre-and postcondition)
+]
+
+========================
+FODS - PG
+
+Structural Rules:
+1. Required sections: Pre/postconditions, main flow, alternative flows.
+2. Sequential numbering of steps.
+3. Clear actor-system interaction format.
+
+Intended Meaning Rules:
+1. Pre/postconditions must be logical.
+2. Main flow achieves the use case goal.
+3. Alternative flows handle exceptions appropriately.
+4. Steps describe meaning clearly.
+
+Use Case 1: Browse Menu (UC-01)
+- Sections: 4 (preconditions, postconditions, main flow, alternative flows).
+- Main Flow Steps: 4 steps.
+- Alternative Flows: 2 scenarios (not logged in, out of stock), counted as 2 steps.
+- Total elements: ( 4 + 4 + 2 = 10 ).
+
+Use Case 2: Place Order (UC-02)
+- Sections: 4.
+- Main Flow Steps: 4 steps.
+- Alternative Flows: 2 scenarios (incomplete fields, payment failure), counted as 2 steps.
+- Total elements: ( 4 + 4 + 2 = 10 ).
+
+Use Case 3: Track Order (UC-03)
+- Sections: 4.
+- Main Flow Steps: 3 steps.
+- Alternative Flows: 1 scenario (no updates), counted as 1 step.
+- Total elements: ( 4 + 3 + 1 = 8 ).
+
+Use Case 4: Promotional Features (UC-04)
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 4 steps.
+- Alternative Flows: None.
+- Total elements: ( 3 + 4 + 0 = 7 ).
+
+Use Case 5: Personalized Recommendations (UC-05)
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 4 steps.
+- Alternative Flows: None.
+- Total elements: ( 3 + 4 + 0 = 7 ).
+
+Use Case 6: Mobile Optimization (UC-06)
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 4 steps.
+- Alternative Flows: None.
+- Total elements: ( 3 + 4 + 0 = 7 ).
+
+Use Case 7: Customer Support (UC-07)
+- Sections: 3 (preconditions, postconditions, main flow; no alternative flows).
+- Main Flow Steps: 4 steps.
+- Alternative Flows: None.
+- Total elements: ( 3 + 4 + 0 = 7 ).
+
+Total I for all use cases:
+[
+10 + 10 + 8 + 7 + 7 + 7 + 7 = 56
+]
+
+Use Case 4: Promotional Features (UC-04)
+- Alternative flows missing (e.g., no promotions available): 1 error.
+- Errors: 1.
+
+Use Case 5: Personalized Recommendations (UC-05)
+- Alternative flows missing (e.g., no recommendations available): 1 error.
+- Errors: 1.
+
+Use Case 6: Mobile Optimization (UC-06)
+- Alternative flows missing (e.g., mobile device unsupported): 1 error.
+- Errors: 1.
+
+Use Case 7: Customer Support (UC-07)
+- Alternative flows missing (e.g., support unavailable): 1 error.
+- Errors: 1.
+
+Total Errors:
+[
+1 + 1 + 1 + 1 = 4
+]
+
+Validity
+[
+V = 1 - 4/56 = 0.9285
+]
