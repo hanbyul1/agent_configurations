@@ -1,10 +1,12 @@
-# Agent Configurations – Task Analyses
+# Agent Configurations – Task Analyses and Implementations
 
-This repository contains textual analysis files for experiments on agent configurations in LLM-assisted software development. Although the files use the `.tex` extension (as they were created in LaTeX editors), they are not LaTeX compilable. They are plain text documents intended for review, reference, and integration into manuscripts.
+This repository contains analysis and implementation files for experiments on **agent configurations** in LLM-assisted software development.  
+The materials include both **task-level analysis notes** (`.tex` files, plain text) and **Jupyter Notebooks** (`.ipynb`) for running and reproducing experiments.  
 
 ## Repository Structure
+
+### Analysis Files
 agent_configurations/
-│
 ├── task1-analysis.tex
 ├── task2-analysis.tex
 ├── task3-analysis.tex
@@ -14,48 +16,58 @@ agent_configurations/
 ├── task7-analysis.tex
 ├── task8-analysis.tex
 ├── task9-analysis.tex
-└── README.md
 
-- task1-analysis.tex → Analysis notes for Task 1  
-- task2-analysis.tex → Analysis notes for Task 2  
-- task3-analysis.tex → Analysis notes for Task 3  
-- task4-analysis.tex → Analysis notes for Task 4  
-- task5-analysis.tex → Analysis notes for Task 5  
-- task6-analysis.tex → Analysis notes for Task 6  
-- task7-analysis.tex → Analysis notes for Task 7  
-- task8-analysis.tex → Analysis notes for Task 8  
-- task9-analysis.tex → Analysis notes for Task 9  
+- Each `.tex` file contains the analysis for one designated task.  
+- The content is **plain text** (not LaTeX compilable) but formatted via LaTeX editors.  
+- Each file documents results for:  
+  - **Three systems**: TORS (Tour Reservation System), SWS (Smart Home System), FODS (Food Ordering and Delivery System)  
+  - **Three configurations**: Task-Specialist, Phase-Specialist, Process-Generalist  
 
-> Task names/descriptions should be updated based on the actual experiments or artifact categories in your study.
+---
+
+### Implementation Files
+agent_configurations/
+├── TORS-individual-task.ipynb
+├── TORS-individual-phase.ipynb
+├── TORS-single-agent.ipynb
+├── SWS-individual-task.ipynb
+├── SWS-individual-phase.ipynb
+├── SWS-single-agent.ipynb
+├── FODS-individual-task.ipynb
+├── FODS-individual-phase.ipynb
+├── FODS-single-agent.ipynb
+
+- Each `.ipynb` Jupyter Notebook contains executable code for reproducing results in one of the three systems.  
+- For each system (**TORS, SWS, FODS**), three configurations are provided:  
+  - `*-individual-task.ipynb` → Task-Specialist configuration  
+  - `*-individual-phase.ipynb` → Phase-Specialist configuration  
+  - `*-single-agent.ipynb` → Process-Generalist configuration  
+
+---
 
 ## Purpose
 
-Each file documents the analysis of a designated task in the evaluation of agent configurations. Specifically, every file contains results for:
+Together, the analysis files and notebooks provide a full replication package for the experiments.  
 
-- Three systems:  
-  - TORS (Tour Reservation System)  
-  - SWS (Smart Home System)  
-  - FODS (Food Ordering and Delivery System)  
+- The **analysis files** describe and interpret the results.  
+- The **implementation notebooks** reproduce the actual runs for each system and configuration.  
 
-- Three agent configurations:  
-  - Task-Specialist  
-  - Phase-Specialist  
-  - Process-Generalist  
+This structure allows other researchers to both **inspect the reasoning** and **replicate the execution** of the experiments.
 
-The analyses typically include:  
-
-- Task description and objectives  
-- Evaluation methodology (validity criteria, correctness rules, etc.)  
-- Results for TORS, SWS, and FODS under all three configurations  
-- Comparative discussion and insights  
-
-These files are meant for textual review and reference, not direct LaTeX compilation.
+---
 
 ## Usage
 
-- Open the `.tex` files in any text editor (e.g., VS Code, Overleaf, TeXShop) to read the analysis.  
-- Copy or adapt sections into manuscripts or reports as needed.  
-- Treat them as modular building blocks for documenting experimental results.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/<your-username>/agent_configurations.git
+   cd agent_configurations
+
+2.	Open the Jupyter Notebooks to reproduce experiments:
+
+jupyter notebook TORS-individual-task.ipynb
+
+3.	Open the .tex analysis files in any text editor to review task-specific analysis results.
 
 License
 
